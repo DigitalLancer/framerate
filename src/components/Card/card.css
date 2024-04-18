@@ -1,0 +1,51 @@
+.card-person{
+    border-radius: 20px;
+    width: 150px;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    margin-bottom: 20px;   
+}
+.card-person p{
+    margin:0;
+}
+.card-person .role{
+    margin-top: 5px;
+    color: rgb(87, 87, 87);
+    font-weight: lighter;
+}
+.card-person .card-image{
+    height: 225px;
+}
+.btn-card{
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+}
+.btn-card:hover{
+    filter: brightness(80%);
+}
+.card{
+    border-radius: 20px;
+    width: 200px;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    
+}
+.card-image{
+    border-radius: 10px;
+    width: 100%;
+}
+.card-info{
+    display: flex;
+    justify-content: space-between;
+    margin:0;
+}
+.favorite-btn{
+    border: none;
+    cursor: pointer;
+}
