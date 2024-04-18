@@ -1,4 +1,4 @@
-import Card from "./Card/Card.jsx";
+import Card from "../Card/Card.jsx";
 function DetailContent(props) {
     const cast = props.credits;
     return (

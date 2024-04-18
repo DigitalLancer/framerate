@@ -10,7 +10,6 @@ function Home() {
   return(
     <>
     <div className="container">
-      <button onClick={()=>console.log(favorites)}>Click me</button>
       <img src="https://cdn.europosters.eu/image/hp/66431.jpg" className="banner-img" alt="" />
       <h2>Popular</h2>
       {popular && <Carousel list={popular.results}></Carousel>}     

@@ -41,8 +41,6 @@
     width: 100%;
 }
 .card-info{
-    display: flex;
-    justify-content: space-between;
     margin:0;
 }
 .favorite-btn{

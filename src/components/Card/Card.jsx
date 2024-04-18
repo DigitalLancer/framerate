@@ -52,13 +52,6 @@ function Card(props) {
                     </button>
                     <div className='card-info'>
                         <h3>{movie.title}</h3>
-                        <button className='favorite-btn' onClick={() => {
-                            setFavorite(!isFavorite);
-                            handleFavorite(movie);
-                            
-                        }}>
-                            {isFavorite ? <img src={redHeart} /> : <img src={blackHeart} />}
-                        </button>
                     </div>
                     {props.voteVisible && <h3>{movie.vote_average.toFixed(1)}</h3>}
                 </div>

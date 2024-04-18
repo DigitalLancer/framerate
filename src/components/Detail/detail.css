@@ -1,0 +1,14 @@
+.score{
+    border-radius: 50%;
+    border: green solid;
+    background-color: rgb(41, 41, 41);
+    font-weight: bolder;
+    padding: 5px;
+    
+}
+.heart{
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
