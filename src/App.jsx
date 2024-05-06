@@ -4,6 +4,7 @@ import TopRated from './pages/TopRated.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
 import CardDetail from './pages/CardDetail.jsx';
 import Favorites from './pages/Favorites.jsx';
+import SearchResult from './pages/SearchResult.jsx';
 function App() {
   return(
     <>
@@ -13,7 +14,9 @@ function App() {
       <Route path='/trending' element={<TopRated/>}/>
       <Route path='/movie/:id' element={<CardDetail/>}/>
       <Route path='/favorites' element={<Favorites/>}/>
+      <Route path='/result' element={<SearchResult/>}/>
     </Routes>   
+
     </>
   );
 }

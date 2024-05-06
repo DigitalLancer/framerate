@@ -8,10 +8,10 @@ function DetailBanner(props) {
 
   const movie = props.movie;
   const credits = props.credits;
-  const accountState=props.accountState;
+  const accountState = props.accountState;
   const director = props.credits.crew.filter((person) => person.job === "Director")[0];
   const stars = credits.cast.slice(0, 6);
-  
+
   let starString = "";
   let genreString = "";
   for (let x of stars) {
@@ -20,18 +20,26 @@ function DetailBanner(props) {
   for (let x of movie.genres) {
     genreString += x.name + ", "
   }
-  useEffect(()=>{
-    if(accountState.favorite){
+  useEffect(() => {
+    console.log("account state 2: ",accountState);
+    console.log("favorite state: ",isFavorite);
+    if (accountState?.favorite) {
       setFavorite(true);
     }
-    else{
-      setFavorite(false);
-    }
-  },[])
+
+  }, [])
 
   const handleFavorite = () => {
-    if (!accountState.favorite) {
+    console.log("handle favorite...",accountState);
+    if (isFavorite==false) {
       setFavorite(true);
+      //props.setMyState(true);
+      props.setMyState(prevState => ({
+        // object that we want to update
+        ...prevState,    // keep all other key-value pairs
+        favorite: true      // update the value of specific key
+
+      }))
       fetch("https://api.themoviedb.org/3/account/21124862/favorite", {
         headers: {
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YThmYzZjMmQ4OGZiN2I1ZDU4MDE0OTc3YWQwMDI1ZSIsInN1YiI6IjY1ZmJlODFlMGMxMjU1MDE3ZTBhNzc1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qwoVansyGDWn4UeHiB3DhBwd3nkWhH23zeh1HqiQlf4',
@@ -46,9 +54,17 @@ function DetailBanner(props) {
       }).then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error(error));
+      window.alert("Movie added to favorites");
     }
     else {
       setFavorite(false);
+      //props.setMyState(false);
+      props.setMyState(prevState => ({
+        // object that we want to update
+        ...prevState,    // keep all other key-value pairs
+        favorite: false      // update the value of specific key
+
+      }))
       fetch("https://api.themoviedb.org/3/account/21124862/favorite", {
         headers: {
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YThmYzZjMmQ4OGZiN2I1ZDU4MDE0OTc3YWQwMDI1ZSIsInN1YiI6IjY1ZmJlODFlMGMxMjU1MDE3ZTBhNzc1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qwoVansyGDWn4UeHiB3DhBwd3nkWhH23zeh1HqiQlf4',
@@ -63,7 +79,9 @@ function DetailBanner(props) {
       }).then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error(error));
+      window.alert("Movie removed from favorites");
     }
+    console.log("Favorite: ", accountState);
   }
 
 

@@ -2,6 +2,7 @@
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
+    grid-gap: 40px;
     justify-content: center;
-    justify-content: space-evenly;
+
 }

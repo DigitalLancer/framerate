@@ -8,7 +8,7 @@ function Catalogue(props){
         <div className='catalogue'>
             {catalogue.map((movie)=>(
                 <>
-                <Card item={movie} voteVisible={true} key={movie.id} isMovie={true}/>
+                <Card item={movie} key={movie.id} isMovie={true} showVote={props.voteVisible}/>
                 </>
             ))}
         </div>

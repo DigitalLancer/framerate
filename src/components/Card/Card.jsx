@@ -9,38 +9,6 @@ function Card(props) {
     const navigate = useNavigate();
     const [isFavorite, setFavorite] = useState(false)
     //const movieState=useFetch(`https://api.themoviedb.org/3/movie/${movie.id}/account_states`);
-    const handleFavorite = (movie) => {
-        if (isFavorite === false) {
-            fetch("https://api.themoviedb.org/3/account/21124862/favorite", {
-                headers: {
-                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YThmYzZjMmQ4OGZiN2I1ZDU4MDE0OTc3YWQwMDI1ZSIsInN1YiI6IjY1ZmJlODFlMGMxMjU1MDE3ZTBhNzc1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qwoVansyGDWn4UeHiB3DhBwd3nkWhH23zeh1HqiQlf4',
-                    'Content-Type': 'application/json'
-                },
-                method: 'POST',
-                body: JSON.stringify({
-                    media_type: "movie",
-                    media_id: movie.id,
-                    favorite: true
-                })
-            }).then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error(error));
-            window.alert("Added to favorites");
-        }
-        else {
-            fetch("https://api.themoviedb.org/3/account/21124862/favorite", {
-                headers: {
-                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YThmYzZjMmQ4OGZiN2I1ZDU4MDE0OTc3YWQwMDI1ZSIsInN1YiI6IjY1ZmJlODFlMGMxMjU1MDE3ZTBhNzc1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qwoVansyGDWn4UeHiB3DhBwd3nkWhH23zeh1HqiQlf4',
-                    'Content-Type': 'application/json'
-                },
-                method: 'POST',
-                body: JSON.stringify({media_type: "movie",media_id: movie.id,favorite: false})
-            }).then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error(error));
-            window.alert("Removed from favorites");
-        }
-    }
 
     if (props.isMovie) {
         
@@ -53,7 +21,7 @@ function Card(props) {
                     <div className='card-info'>
                         <h3>{movie.title}</h3>
                     </div>
-                    {props.voteVisible && <h3>{movie.vote_average.toFixed(1)}</h3>}
+                    {props.showVote && <h3>{movie.vote_average.toFixed(1)}</h3>}
                 </div>
             </>
         )

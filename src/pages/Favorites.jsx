@@ -7,7 +7,7 @@ function Favorites() {
     <>
       <div className="container">
         <h2>Favorites</h2>
-        {movies && <Catalogue list={movies.results}></Catalogue>}
+        {movies && <Catalogue list={movies.results} voteVisible={false}></Catalogue>}
       </div>
     </>
   )

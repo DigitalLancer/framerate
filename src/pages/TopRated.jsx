@@ -8,7 +8,7 @@ function TopRated() {
     <>
     <div className="container">
       <h2>Top Rated Movies</h2>  
-      {catalogue && <Catalogue list={catalogue.results}></Catalogue>}      
+      {catalogue && <Catalogue list={catalogue.results} voteVisible={true}></Catalogue>}      
     </div>  
     </>
     )
