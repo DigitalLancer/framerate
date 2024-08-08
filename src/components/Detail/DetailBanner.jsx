@@ -1,10 +1,15 @@
 import "./detail.css"
 import { useState, useEffect } from 'react';
-import whiteHeart from "../../images/heart_white.png"
-import redHeart from "../../images/heart_red.png"
+import whiteHeart from "../../images/heart_white_background.png"
+import redHeart from "../../images/heart_red_background.png"
+import watchlistIcon from "../../images/watchlist_empty.png"
+import watchlistActive from "../../images/watchlist_filled.png"
 import useFetch from "../../hooks/useFetch";
+import AntModal from "../AntModal/AntModal";
 function DetailBanner(props) {
+
   const [isFavorite, setFavorite] = useState(false);
+  const [isWatchlist, setWatchlist] = useState(false);
 
   const movie = props.movie;
   const credits = props.credits;
@@ -21,17 +26,17 @@ function DetailBanner(props) {
     genreString += x.name + ", "
   }
   useEffect(() => {
-    console.log("account state 2: ",accountState);
-    console.log("favorite state: ",isFavorite);
     if (accountState?.favorite) {
       setFavorite(true);
+    }
+    if (accountState?.watchlist) {
+      setWatchlist(true);
     }
 
   }, [])
 
   const handleFavorite = () => {
-    console.log("handle favorite...",accountState);
-    if (isFavorite==false) {
+    if (isFavorite == false) {
       setFavorite(true);
       //props.setMyState(true);
       props.setMyState(prevState => ({
@@ -81,7 +86,61 @@ function DetailBanner(props) {
         .catch(error => console.error(error));
       window.alert("Movie removed from favorites");
     }
-    console.log("Favorite: ", accountState);
+  }
+
+  const handleWatchlist = () => {
+
+    if (isWatchlist == false) {
+      setWatchlist(true);
+      //props.setMyState(true);
+      props.setMyState(prevState => ({
+        // object that we want to update
+        ...prevState,    // keep all other key-value pairs
+        watchlist: true      // update the value of specific key
+
+      }))
+      fetch("https://api.themoviedb.org/3/account/21124862/watchlist", {
+        headers: {
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YThmYzZjMmQ4OGZiN2I1ZDU4MDE0OTc3YWQwMDI1ZSIsInN1YiI6IjY1ZmJlODFlMGMxMjU1MDE3ZTBhNzc1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qwoVansyGDWn4UeHiB3DhBwd3nkWhH23zeh1HqiQlf4',
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({
+          media_type: "movie",
+          media_id: movie.id,
+          watchlist: true
+        })
+      }).then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+      window.alert("Movie added to watchlist");
+    }
+    else {
+      setWatchlist(false);
+      //props.setMyState(false);
+      props.setMyState(prevState => ({
+        // object that we want to update
+        ...prevState,    // keep all other key-value pairs
+        watchlist: false      // update the value of specific key
+
+      }))
+      fetch("https://api.themoviedb.org/3/account/21124862/favorite", {
+        headers: {
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YThmYzZjMmQ4OGZiN2I1ZDU4MDE0OTc3YWQwMDI1ZSIsInN1YiI6IjY1ZmJlODFlMGMxMjU1MDE3ZTBhNzc1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qwoVansyGDWn4UeHiB3DhBwd3nkWhH23zeh1HqiQlf4',
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({
+          media_type: "movie",
+          media_id: movie.id,
+          watchlist: false
+        })
+      }).then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+      window.alert("Movie removed from watchlist");
+    }
+
   }
 
 
@@ -102,6 +161,12 @@ function DetailBanner(props) {
             }}>
               {isFavorite ? <img src={redHeart} /> : <img src={whiteHeart} />}
             </button>
+            <button className='heart' onClick={() => {
+              handleWatchlist();
+            }}>
+              {isWatchlist ? <img src={watchlistActive} /> : <img src={watchlistIcon} />}
+            </button>
+            <AntModal movie={movie} />
           </div>
           <p>{genreString.slice(0, -2)}</p>
           <p><span style={{ fontWeight: "bold" }}>Overview:  </span> {movie.overview}</p>

@@ -23,3 +23,7 @@
     background: rgb(202, 202, 202);
     border-radius: 10px;
 }
+.side-scroll .media-img{
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

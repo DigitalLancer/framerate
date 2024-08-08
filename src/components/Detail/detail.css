@@ -2,6 +2,8 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 80px 60px;
 }
 .score{
     border-radius: 50%;
@@ -16,6 +18,12 @@
     border: none;
     margin-left: 10px;
     cursor: pointer;
+    
+}
+.cast-info{
+    position: relative;
+    z-index: 1000;
+    background-color: #EEEEEE;
 }
 .banner-img-detail{
     filter: brightness(30%);
@@ -37,7 +45,6 @@
     text-align: center;
     display: flex;
     z-index: 100;
-    margin: 121px 70px;
 }
 .info h1{
     margin: 0;
@@ -52,6 +59,9 @@
     text-align: start;
     margin: 0px 40px;
 }
+.production h2{
+    font-family: "Hammersmith One";
+}
 .left-page .cast-title{
     font-family: "Hammersmith One";
     margin: 0;
@@ -63,7 +73,73 @@
 .production{
     flex: 1;
     text-align: start;
+    margin-left:20px;
 }
 .left-page{
-    flex:3;
+    flex:4;
+}
+.profile-picture{
+    border-radius: 10px; 
+}
+.info-person{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+} 
+.list li button{
+    border: none;
+    text-align: left;
+    width: 100%;
+    background-color: #dadde4;
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: "Hammersmith One";
+    cursor: pointer;
+}
+.list li button:hover{
+    filter: brightness(95%);
+}
+.list li::marker{
+    color: #212A3E;
+}
+.recommendations h2{
+    font-family:"Hammersmith One" ;
+    padding: 0px 40px;
+}
+.media h2{
+    font-family:"Hammersmith One" ;
+    padding: 0px 40px;
+}
+.reviews{
+    margin: 40px;
+}
+.reviews h2{
+    font-family:"Hammersmith One" ;
+    padding: 0px;
+}
+.keyword-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.keyword{
+    margin: 5px 10px 5px 0px;
+    background-color: #d6e0f3;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.provider{
+    align-items: center;
+    display: flex;
+}
+.platform-logo{
+    height: 2em;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.buy{
+    margin-bottom: 10px;
+    line-height: 1.2em;
 }

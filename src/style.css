@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Lalezar&display=swap');
-.catalogue{
-    display: grid;
-    grid-template-columns: repeat(7,200px);
-    grid-gap: 11px;
-    margin: 30px;
-}
+
 body{
     
     margin: 0;
@@ -24,7 +19,7 @@ body{
     font-weight: bolder;
     font-size: 0.8em;
 }
-h2{   
+.home h2{   
     font-family: "Hammersmith One";
     font-weight:bolder ;
     margin: 0 0 0 40px;
@@ -42,7 +37,7 @@ h2{
     border-radius: 10px;
 }
 .container{
-    width: 80%;
+    width: 75%;
     margin-left:auto;
     margin-right:auto;
     background-color: #EEEEEE;
@@ -79,6 +74,24 @@ h2{
 .info p{
     color: white;
 }
-.cast-info{
-    display: block;
+
+.dropdown-label{
+    font-weight: bold;
+    font-size:1.5em ;
+}
+.dropdown-select{
+    margin: 20px 0px;
+    font-size: 1em;
+    padding: 10px 5px;
+    background-color: white;
+    width: 150px;
+}
+.filter{
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    margin-bottom: 20px;
+}
+.dropdown-menu{
+    margin-right: 30px;
 }

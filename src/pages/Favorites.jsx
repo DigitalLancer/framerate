@@ -7,6 +7,8 @@ function Favorites() {
     <>
       <div className="container">
         <h2>Favorites</h2>
+        <h2>Star Rating</h2>
+        <span className="fa fa-star">Star</span>
         {movies && <Catalogue list={movies.results} voteVisible={false}></Catalogue>}
       </div>
     </>

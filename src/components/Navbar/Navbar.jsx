@@ -32,7 +32,7 @@ function Navbar() {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/trending">Top Rated</Link></li>
-          <li>Movies</li>
+          <li><Link to="/discover">Discover</Link></li>
         </ul>
       </div>
       <div className='navbar-right'>
@@ -41,7 +41,7 @@ function Navbar() {
             <li><button>Account</button></li>
             <div className="list">
               <Link to="/favorites">Favorites</Link>
-              <Link to="/favorites">Watchlist</Link>
+              <Link to="/watchlist">Watchlist</Link>
             </div>
           </div>
           <li>
