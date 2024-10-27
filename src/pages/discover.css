@@ -1,0 +1,43 @@
+.discover{
+    padding: 0px 60px;
+}
+.discover h1{
+    margin: 0px 0px 20px 0px; 
+    padding-top: 20px;
+    color: rgb(58, 58, 58);
+}
+.filter{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-bottom: 20px;
+}
+.dropdown-label{
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-right: 10px;
+    color: rgb(58, 58, 58);
+}
+.dropdown-select{
+    margin: 20px 0px;
+    font-size: 1em;
+    padding: 10px 5px;
+    background-color: #ffffff;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+}
+.dropdown-menu{
+    margin-right: 30px;
+}
+@media (max-width: 760px) {
+    .dropdown-label{
+        font-size: 1em;
+    }
+    .dropdown-menu{
+        margin-right: 15px;
+    }
+    .filter{
+        justify-content:space-between;
+    }
+}

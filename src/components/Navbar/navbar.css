@@ -32,7 +32,21 @@
     list-style-type: none;
     color: white;
 }
-
+.navbar-icon{
+    display: none;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+}
+.close-button{
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+}
 .navbar a {
     font-family: "Hammersmith One";
     font-weight: 400;
@@ -87,4 +101,66 @@
 }
 .dropdown .list a:hover{
     background-color: #384666;
+}
+ul{
+    padding-left: 0;
+}
+.side-nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: #212A3E;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+    padding: 20px;
+}
+.side-nav li {
+    font-family: "Hammersmith One";
+    font-weight: 400;
+    list-style-type: none;
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.side-nav a {
+    font-family: "Hammersmith One";
+    font-weight: 400;
+    list-style-type: none;
+    color: white;
+    text-decoration: none;
+    
+}
+@media (max-width: 1280px) {
+    .searchbar{
+        width: 100%;
+    }
+}
+@media (max-width: 1024px) {
+    .navbar{
+        justify-content: space-around;
+    }
+    .large{
+        display: none;
+    }
+    .navbar-icon{
+        display: block;
+    }
+    .navbar a, .logo{
+        padding: 0;
+    }
+    .logo{
+        margin: 0;
+    }
+
+}
+@media (max-width: 760px) {
+    .navbar-left ul{
+        display: none;
+    }
 }

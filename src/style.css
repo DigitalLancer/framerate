@@ -41,7 +41,6 @@ body{
     margin-left:auto;
     margin-right:auto;
     background-color: #EEEEEE;
-    
 }
 .content{
     display: flex;
@@ -53,6 +52,10 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
+}
+.container-content{
+    margin: auto;
+    padding: 0 60px;
 }
 .btn-card{
     border:none;
@@ -67,31 +70,34 @@ body{
 .detail-poster{
     border-radius: 10px;
 }
-
 .container h2{
-    padding-top: 30px;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 2em;
+    color: rgb(49, 49, 49);
+}
+.container .home h2{
+    padding: 40px;
+    margin: 0;
+    font-size: 2em;
+    color: rgb(49, 49, 49);
 }
 .info p{
     color: white;
 }
-
-.dropdown-label{
-    font-weight: bold;
-    font-size:1.5em ;
+@media (max-width: 1024px) {
+    .container{
+        width: 100%;
+    }
+    .home h2{
+        font-size: 1.7em;
+    }
+    .container h2{
+        padding-bottom: 20px;
+    }
 }
-.dropdown-select{
-    margin: 20px 0px;
-    font-size: 1em;
-    padding: 10px 5px;
-    background-color: white;
-    width: 150px;
-}
-.filter{
-    display: flex;
-    align-items: center;
-    justify-content:start;
-    margin-bottom: 20px;
-}
-.dropdown-menu{
-    margin-right: 30px;
+@media (max-width: 760px) {
+    .container-content{
+        padding: 0 30px;
+    }
 }

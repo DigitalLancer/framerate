@@ -1,11 +1,11 @@
 import './carousel.css'
+import { useEffect } from 'react';
 import Card from "../Card/Card.jsx"
 import '../../style.css'
 function Carousel(props) {
     const catalogue = props.list;
     //console.log(catalogue[3].title);
     if (props.type === "media") {
-        console.log("media data: ",catalogue)
         return (
             <div className='side-scroll'>
                 {catalogue.backdrops.map((image) =>

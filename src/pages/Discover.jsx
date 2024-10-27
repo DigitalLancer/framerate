@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import '../style.css'
+import './discover.css'
 import Catalogue from "../components/Catalogue/Catalogue.jsx";
 import useFetch from "../hooks/useFetch.jsx";
 function Discover() {
@@ -42,8 +43,8 @@ function Discover() {
 
   return (
     <div className="container">
-      <div style={{ padding: '0px 60px' }}>
-        <h1 style={{ margin: '0px 0px 20px 0px', paddingTop: '20px' }}>Movies</h1>
+      <div className="discover">
+        <h1>Movies</h1>
         <div >
           <form className="filter">
             <div className="dropdown-menu">

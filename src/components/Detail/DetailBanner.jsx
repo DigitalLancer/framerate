@@ -35,6 +35,8 @@ function DetailBanner(props) {
 
   }, [])
 
+
+
   const handleFavorite = () => {
     if (isFavorite == false) {
       setFavorite(true);
@@ -150,12 +152,12 @@ function DetailBanner(props) {
       <div className="info">
         <div>
           <img src={"https://image.tmdb.org/t/p/w200" + movie.poster_path} className="detail-poster" alt="" />
-          <p>{movie.release_date}</p>
+          <p><span style={{ fontWeight: 'bold' }}>Release Date:</span> {movie.release_date}</p>
         </div>
         <div className="info-text">
           <h1>{movie.title}</h1>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <p><span className="score">{`${movie.vote_average.toFixed(1)}`}</span> <span style={{ fontWeight: 'bold' }}>User Score </span></p>
+          <div className="buttons-row">
+            <p><span className="score">{`${movie.vote_average.toFixed(1)}`}</span> <span style={{ fontWeight: 'bold' }} className="score-text">Score </span></p>
             <button className='heart' onClick={() => {
               handleFavorite();
             }}>

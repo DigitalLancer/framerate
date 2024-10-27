@@ -46,3 +46,21 @@
     border: none;
     cursor: pointer;
 }
+@media (max-width: 760px) {
+    .side-scroll .card{
+        width: 140px;
+    }
+    .card{
+        width: 140px;
+    }
+    .card-person{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    .card-person .card-image{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}

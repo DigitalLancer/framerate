@@ -11,14 +11,17 @@
     background-color: rgb(41, 41, 41);
     font-weight: bolder;
     padding: 5px;
-    
+    margin-right: 5px;
+}
+.score-text{
+    margin-right: 5px;
 }
 .heart{
     background-color: transparent;
     border: none;
-    margin-left: 10px;
+    margin-right: 10px;
     cursor: pointer;
-    
+    padding: 0;
 }
 .cast-info{
     position: relative;
@@ -142,4 +145,64 @@
 .buy{
     margin-bottom: 10px;
     line-height: 1.2em;
+}
+.buttons-row{
+    display: flex;
+    align-items: center; 
+}
+.rating-btn{
+    margin-left: 10px;
+}
+@media (max-width: 760px) {
+    .banner{
+        padding: 30px 20px;
+    }
+    .banner-img-detail{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    .detail-content{
+        flex-direction: column;
+    }
+    .info{
+        flex-direction: column;
+    }
+    .info h1{
+        font-size: 1.3em;
+        margin: 10px 0;
+    }
+    .info p{
+        font-size: 0.9em;
+    }
+    .detail-poster{
+        width: 170px;
+    }
+    .score-text{
+        display: none;
+    }
+
+    .buttons-row p{
+        margin: 5px;
+    }
+    .cast{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .left-page .cast-title{
+        font-size: 1.8em;
+    }
+    .production{
+        margin: 0;
+    }
+    .production .cast-title{
+        font-size: 1.8em;
+    }
+    .production h2{
+        font-size: 1.8em;
+    }
+    .reviews h2{
+        font-size: 1.8em;
+    }
 }

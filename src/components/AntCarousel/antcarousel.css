@@ -30,7 +30,6 @@
     font-weight:bolder ;
     font-size: 4em;
     color: white;
-    
 }
 .btn-poster{
     font-size: 1.3em;
@@ -46,4 +45,22 @@
 .btn-poster:hover{
     filter: brightness(90%);
 }
-    
+@media (max-width: 1024px) {
+    .banner-img{
+        height: 500px;
+    }
+}
+@media (max-width: 760px) {
+    .banner-img{
+        height: 300px;
+    }
+    .text{
+        line-height: normal;
+        top: 20px;
+        left: 20px;
+    }
+    .text p{
+        font-size: 1.7em;
+        margin-bottom: 10px;
+    }
+}

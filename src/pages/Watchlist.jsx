@@ -5,8 +5,10 @@ function Watchlist() {
     return (
         <>
             <div className="container">
-                <h2>Watchlist</h2>
-                {movies && <Catalogue list={movies.results} voteVisible={false}></Catalogue>}
+                <div className="container-content">
+                    <h2>Watchlist</h2>
+                    {movies && <Catalogue list={movies.results} voteVisible={false}></Catalogue>}
+                </div>
             </div>
         </>
     )

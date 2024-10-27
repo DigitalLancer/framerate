@@ -3,7 +3,7 @@ import DetailBanner from "../components/Detail/DetailBanner";
 import useFetch from "../hooks/useFetch";
 import DetailContent from "../components/Detail/DetailContent";
 import '../style.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import StarRating from "../components/StarRating/StarRating";
 import AntModal from "../components/AntModal/AntModal";
 
@@ -16,8 +16,7 @@ function CardDetail(){
     const creditsData= useFetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=5a8fc6c2d88fb7b5d58014977ad0025e`);
     const accountState = useFetch(`https://api.themoviedb.org/3/movie/${id}/account_states`);
     const providersData = useFetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers`);
-    
-    console.log("account state 1: ",accountState);
+
     return(
         <>
             <div className="container">

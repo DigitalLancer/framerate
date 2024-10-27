@@ -14,7 +14,7 @@ const AntCarousel = (props) => {
                 <div className='poster'>
                     <div className='text'>
                         <p>{movie.title}</p>
-                        <p style={{fontSize: '2.5em' }}>Now Playing</p>
+                        <p style={{color:'#91ddff'}}>Now Playing</p>
                         <button className="btn-poster" onClick={() => navigate(`/movie/${movie.id}`)}>Details</button>
                     </div>
                     <img src={"https://image.tmdb.org/t/p/original" + movie.backdrop_path} alt="" className='banner-img' />
